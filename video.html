@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Видео</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="videos">
+        <div class="container">
+            <video src="image/video-1.MP4" controls class="videos__item"></video>
+            <video src="image/video-2.MP4" controls class="videos__item"></video>
+            <img src="image/video-img.jpg" alt="" class="videos__item">
+            <img src="image/video-img-2.jpg" alt="" class="videos__item">
+            <img src="image/video-img-3.jpg" alt="" class="videos__item">
+            <a href="/index.html" class="back-btn">Назад на главную</a> <!-- Кнопка назад -->
+        </div>
+    </div>
+
+    <!-- Модальное окно для видео и изображений -->
+    <div id="modal" class="modal">
+        <span id="close" class="close">&times;</span>
+        <div id="modal-content" class="modal-content">
+            <!-- Видео или изображение будет вставляться сюда -->
+        </div>
+    </div>
+
+    <script>
+        // Получаем все элементы видео и изображения
+        const mediaItems = document.querySelectorAll('.videos__item');
+        const modal = document.getElementById('modal');
+        const modalContent = document.getElementById('modal-content');
+        const closeModal = document.getElementById('close');
+
+        // Открытие модального окна с выбранным видео или изображением
+        mediaItems.forEach(item => {
+            item.addEventListener('click', () => {
+                const src = item.src || item.currentSrc;
+                if (item.tagName === 'VIDEO') {
+                    const videoElement = document.createElement('video');
+                    videoElement.src = src;
+                    videoElement.controls = true;
+                    videoElement.autoplay = true;
+                    modalContent.innerHTML = '';  // Очистка содержимого
+                    modalContent.appendChild(videoElement);
+                } else if (item.tagName === 'IMG') {
+                    const imgElement = document.createElement('img');
+                    imgElement.src = src;
+                    imgElement.style.width = '100%';
+                    imgElement.style.height = 'auto';
+                    modalContent.innerHTML = '';  // Очистка содержимого
+                    modalContent.appendChild(imgElement);
+                }
+                modal.style.display = 'flex';
+            });
+        });
+
+        // Закрытие модального окна
+        closeModal.addEventListener('click', () => {
+            modal.style.display = 'none';
+            modalContent.innerHTML = '';  // Очистка содержимого
+        });
+
+        // Закрытие модального окна при клике вне его области
+        window.addEventListener('click', (event) => {
+            if (event.target === modal) {
+                modal.style.display = 'none';
+                modalContent.innerHTML = '';  // Очистка содержимого
+            }
+        });
+
+    </script>
+</body>
+
+</html>

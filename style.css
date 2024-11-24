@@ -1,0 +1,900 @@
+@import 'fonts.css';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    vertical-align: bottom;
+}
+
+.container {
+    max-width: 1500px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* nav */
+
+.nav {
+    background: #000;
+    padding: 10px 0;
+}
+
+.nav .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nav__logo {
+    font-family: 'SourGummy';
+    color: #fff;
+}
+
+.nav__list {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.nav__link {
+    color: #fff;
+    transition: 0.5s;
+}
+
+.nav__link:hover {
+    color: #2F80ED;
+}
+
+.nav__btn {
+    text-align: center;
+    color: #fff;
+    background: #2F80ED;
+    padding: 8px 10px;
+    width: 150px;
+    border-radius: 5px;
+}
+
+/* Стили для бургера */
+.nav__burger {
+    display: none;
+    cursor: pointer;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.burger-line {
+    width: 30px;
+    height: 3px;
+    background: #fff;
+    border-radius: 5px;
+}
+
+.nav__list--mobile {
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: #000;
+    height: 100vh;
+    width: 70%;
+    flex-direction: column;
+    justify-content: center;
+    gap: 30px;
+    padding: 50px;
+    transform: translateX(-100%); 
+    opacity: 0; 
+    visibility: hidden;
+    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out; 
+    z-index: 9999;
+}
+
+.nav__list--mobile.active {
+    transform: translateX(0); 
+    opacity: 1;
+    visibility: visible;
+}
+
+.nav__helper {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+}
+
+.language-switcher {
+    position: relative;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-toggle {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    background-color: transparent;
+    color: white;
+    border: 0;
+    padding: 5px 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    outline: none;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #000;
+    border: 1px solid white;
+    border-radius: 5px;
+    margin: 0;
+    padding: 0;
+    z-index: 10;
+    min-width: 120px;
+}
+
+.dropdown-menu li {
+    padding: 10px;
+}
+
+.dropdown-menu li a {
+    text-decoration: none;
+    color: white;
+    display: block;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.dropdown-menu li a:hover {
+    background-color: #007bff;
+    color: white;
+}
+
+/* Медиазапросы для мобильной версии */
+@media screen and (max-width: 768px) {
+    .nav__list {
+        display: none; /* Скрыть обычное меню на мобильных */
+    }
+
+    .nav__burger {
+        display: flex;
+    }
+}
+
+/* nav */
+
+/* header */
+
+.header {
+    background: linear-gradient(rgb(0, 0, 0, 0.5), rgb(0, 0, 0, 0.5)), url(./image/headerBG.jpg) center center / cover no-repeat;
+    width: 100%;
+    min-height: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center; /* Центрируем контент по вертикали */
+}
+
+.header .container {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center; /* Центрируем содержимое контейнера */
+}
+
+.header__desc {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 60px;
+    flex-grow: 1;
+}
+
+.header__title {
+    color: #fff;
+    max-width: 700px;
+    width: 100%;
+    font-size: 50px;
+    line-height: 130%;
+}
+
+.header__span1 {
+    background: #3C6E47;
+}
+
+.header__span2 {
+    background: #E53935;
+}
+
+.header__btn {
+    color: #fff;
+    background: #2F80ED;
+    padding: 10px;
+    display: inline-block;
+    border-radius: 8px;
+    width: 250px;
+    text-align: center;
+}
+
+/* Медиазапросы для мобильных устройств */
+@media screen and (max-width: 768px) {
+    .header__title {
+        font-size: 30px;
+        line-height: 120%;
+        max-width: 100%; 
+    }
+
+    .header__btn {
+        width: 200px; 
+        padding: 8px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .header__title {
+        font-size: 24px; 
+    }
+
+    .header__span1,
+    .header__span2 {
+        font-size: 18px; 
+    }
+
+    .header__btn {
+        width: 180px; 
+    }
+}
+
+/* header */
+
+/* section profile */
+
+.profile {
+    padding: 100px 0;
+}
+
+.profile__cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(255px, 1fr));
+    gap: 30px; /* Добавляем отступы между карточками */
+}
+
+.profile__card {
+    display: grid;
+    place-items: center;
+    padding: 15px; /* Добавим отступы внутри карточки */
+    background-color: #f9f9f9; /* Легкий фон для карточек */
+    border-radius: 8px; /* Закругленные углы для карточек */
+    transition: transform 0.3s ease;
+}
+
+.profile__card-image {
+    max-width: 250px;
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    margin-bottom: 15px;
+    border-radius: 8px; /* Скругление углов у изображений */
+    transition: transform 0.5s ease;
+}
+
+.profile__card-image:hover {
+    transform: scale(1.02); /* Увеличение изображения при наведении */
+}
+
+.profile__title {
+    text-align: center;
+    font-size: 22px;
+    font-weight: bold;
+    color: #333; /* Цвет текста заголовка */
+}
+
+.profile__span1 {
+    color: #2F80ED;
+}
+
+.profile__span2 {
+    color: #00A651;
+}
+
+.profile__span3 {
+    color: #E53935;
+}
+
+/* Медиазапросы для мобильных устройств */
+@media screen and (max-width: 768px) {
+    .profile__cards {
+        grid-template-columns: 1fr; 
+        gap: 20px; 
+    }
+
+    .profile__title {
+        font-size: 18px; 
+    }
+
+    .profile__card {
+        padding: 10px; 
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .profile__title {
+        font-size: 16px;
+    }
+
+    .profile__card-image {
+        height: 150px; 
+    }
+}
+
+
+/* section profile */
+
+/* characteristics */
+
+.characteristics {
+    background: linear-gradient(rgb(0, 0, 0, 0.5), rgb(0, 0, 0, 0.5)), url(./image/orig.avif) center center / cover no-repeat;
+    width: 100%;
+    height: 750px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px; /* Отступы для мобильных */
+}
+
+.drone-block {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px;
+    max-width: 1200px;
+    margin: 0 auto;
+    border: 2px solid #333;
+    background: linear-gradient(135deg, #1a1a1a, #2d2d2d);
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+    width: 100%; /* Занимает всю ширину контейнера */
+}
+
+.drone-content {
+    max-width: 50%; /* Максимальная ширина для контента */
+}
+
+.title {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #00b4d8;
+}
+
+.features {
+    list-style: none;
+    padding: 0;
+}
+
+.features li {
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+    color: #fff;
+}
+
+.cta-button {
+    background-color: #00b4d8;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #0077a8;
+}
+
+.drone-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+@media (max-width: 768px) {
+    .drone-block {
+      flex-direction: column;
+      text-align: center;
+      padding: 30px; 
+    }
+  
+    .drone-content,
+    .drone-image {
+      max-width: 100%;
+    }
+  
+    .title {
+        font-size: 1.5rem; 
+    }
+
+    .features li {
+        font-size: 1rem; 
+    }
+
+    .cta-button {
+        font-size: 0.9rem;
+        padding: 8px 16px; 
+    }
+
+    .drone-image img {
+      margin-top: 20px; 
+    }
+
+    .characteristics {
+        height: auto; 
+    }
+}
+
+@media (max-width: 480px) {
+    .title {
+        font-size: 1.2rem; 
+    }
+
+    .features li {
+        font-size: 0.9rem; 
+    }
+
+    .cta-button {
+        font-size: 0.8rem;
+    }
+
+    .drone-image img {
+        margin-top: 10px; 
+    }
+}
+
+/* characteristics */
+
+
+/* section video  */
+
+.video {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(./image/video-bg.png) center center / cover no-repeat;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+}
+
+.video .container {
+    flex-shrink: 1;
+    display: grid;
+    place-items: center;
+}
+
+.video__button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 25px;
+    background-color: #007BFF;
+    max-width: 250px;
+    width: 100%;
+    padding: 10px 15px;
+    gap: 5px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.video__button:hover {
+    animation: pulse 1s ease-in-out infinite;
+}
+
+
+.video__btn {
+    color: #fff;
+    font-family: Arial, sans-serif;
+    font-size: 1rem;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.03);
+        /* Увеличиваем на 10% */
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* video  */
+
+/* section presentation */
+
+.presentation {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(./image/presentation-bg.jpg) center center / cover no-repeat;
+    width: 100%;
+    height: 550px;
+    display: flex;
+    align-items: center;
+}
+
+.presentation .container {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 35px;
+    padding: 20px;
+}
+
+.presentation__title {
+    color: #fff;
+    font-size: 40px;
+    line-height: 1.2; /* Подправим межстрочный интервал */
+}
+
+.presentation__span1 {
+    background: #3C6E47;
+}
+
+.presentation__txt {
+    color: #fff;
+    font-size: 22px;
+}
+
+.presentation__btn {
+    background-color: #007BFF;
+    max-width: 200px;
+    width: 100%;
+    padding: 10px 15px;
+    cursor: pointer;
+    display: inline-block;
+    text-align: center;
+    border-radius: 10px;
+    color: #fff;
+    transition: background-color 0.3s ease;
+}
+
+.presentation__btn:hover {
+    background-color: #0056b3;
+}
+
+/* Адаптивные стили */
+@media (max-width: 768px) {
+    .presentation {
+        height: 450px; /* Уменьшаем высоту секции на планшетах */
+    }
+
+    .presentation__title {
+        font-size: 30px; /* Уменьшаем размер заголовка */
+    }
+
+    .presentation__txt {
+        font-size: 18px; /* Уменьшаем размер текста */
+    }
+
+    .presentation__btn {
+        max-width: 180px; /* Уменьшаем размер кнопки */
+        padding: 8px 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .presentation {
+        height: 400px; /* Еще меньше высота для мобильных */
+    }
+
+    .presentation__title {
+        font-size: 24px; /* Еще больше уменьшаем размер заголовка */
+    }
+
+    .presentation__txt {
+        font-size: 16px; /* Уменьшаем текст на мобильных */
+    }
+
+    .presentation__btn {
+        max-width: 160px; /* Размер кнопки для мобильных */
+        padding: 8px 10px; /* Уменьшаем отступы */
+    }
+}
+/* presentation  */
+
+/* contact */
+
+.contact {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(./image/contact.webp) center center / cover no-repeat;
+    width: 100%;
+    height: 750px;
+}
+
+.contact .container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Фон с узором */
+.background {
+    padding: 20px;
+    border: 10px solid transparent;
+    background: linear-gradient(white, white) padding-box,
+        repeating-linear-gradient(45deg, #f7d3d3, #f7d3d3 10px, #add8e6 10px, #add8e6 20px) border-box;
+    border-radius: 15px;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Контентный блок */
+.contact-block {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+/* Заголовок */
+.contact-block h2 {
+    margin: 0 0 10px;
+    font-size: 1.8rem;
+    color: #333;
+}
+
+/* Телеграм-ссылка */
+.telegram-handle {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+/* Кнопки */
+.buttons {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.btn {
+    text-decoration: none;
+    font-size: 1rem;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.btn.telegram {
+    background: #0088cc;
+    color: white;
+}
+
+.btn.telegram:hover {
+    background: #005f99;
+}
+
+.btn.email {
+    background: #d9534f;
+    color: white;
+}
+
+.btn.email:hover {
+    background: #b52b27;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .contact-block h2 {
+        font-size: 1.5rem;
+    }
+
+    .btn {
+        font-size: 0.9rem;
+        padding: 8px 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-block {
+        padding: 15px;
+    }
+
+    .buttons {
+        flex-direction: column;
+        gap: 15px;
+    }
+}
+
+/* contact */
+
+/* footer */
+
+.footer {
+    background: #000;
+    padding: 15px 0;
+}
+
+.footer .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.footer__logo {
+    font-family: 'SourGummy';
+    color: #fff;
+}
+
+.footer__list {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.footer__link {
+    transition: 0.5s;
+    color: #fff;
+}
+
+.footer__link:hover {
+    color: #007BFF;
+}
+
+.footer__btn {
+    text-align: center;
+    color: #fff;
+    background: #00A651;
+    padding: 8px 10px;
+    width: 150px;
+    border-radius: 5px;
+}
+
+@media (max-width: 768px) {
+    .footer .container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer__list {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .footer__btn {
+        width: 200px;
+    }
+}
+
+
+/* footer */
+
+/* video html */
+
+/* Стили для контейнера и сетки */
+.videos .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Автоматически адаптируемая сетка */
+    gap: 20px;
+    padding: 20px;
+    margin: 0 auto;
+}
+
+/* Универсальные стили для видео и изображений */
+.videos__item {
+    width: 100%;
+    height: 250px;  /* Универсальная высота для всех элементов */
+    object-fit: cover;  /* Сохранение пропорций */
+    cursor: pointer;
+    border-radius: 10px; /* Скругленные углы для более современного вида */
+    transition: transform 0.3s ease, opacity 0.3s ease, box-shadow 0.3s ease;
+}
+
+.videos__item:hover {
+    transform: scale(1.05);
+    opacity: 0.8;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Легкая тень при наведении */
+}
+
+/* Стиль модального окна */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+.modal-content {
+    position: relative;
+    max-width: 90%;
+    max-height: 90%;
+    background-color: #fff; /* Фон для контента */
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+}
+
+.back-btn {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.back-btn:hover {
+    background-color: #0056b3;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Адаптивные стили */
+@media screen and (max-width: 768px) {
+    .videos .container {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Больше элементов на мобильных */
+    }
+
+    .videos__item {
+        height: 200px;  /* Меньше высота для мобильных устройств */
+    }
+}

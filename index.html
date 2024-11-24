@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Дроны</title>
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body>
+
+    <nav class="nav">
+        <div class="container">
+            <a href="" class="nav__logo">DRONES</a>
+            <ul class="nav__list">
+                <li class="nav__item">
+                    <a href="#characteristics" class="nav__link">Характеристики</a>
+                </li>
+                <li class="nav__item">
+                    <a href="#video" class="nav__link">Видео</a>
+                </li>
+                <li class="nav__item">
+                    <a href="#contact" class="nav__link">Контакты</a>
+                </li>
+                <li class="nav__item">
+                    <a href="#contact" class="nav__link">Приобрести</a>
+                </li>
+            </ul>
+            <div class="nav__helper">
+                <a href="#contact" class="nav__btn">ПРИОБРЕСТИ</a>
+                <div class="language-switcher">
+                    <div class="dropdown">
+                        <button class="dropdown-toggle" id="dropdownButton">🇷🇺 Русский <i class='bx bx-chevron-down'></i></button>
+                        <ul class="dropdown-menu" id="dropdownMenu">
+                            <li><a href="index.html">🇷🇺 Русский</a></li>
+                            <li><a href="index-en.html">🇬🇧 English</a></li>
+                            <li><a href="index-es.html">🇪🇸 Español</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- Бургер-меню для мобильных устройств -->
+            <div class="nav__burger" onclick="toggleMenu()">
+                <span class="burger-line"></span>
+                <span class="burger-line"></span>
+                <span class="burger-line"></span>
+            </div>
+        </div>
+
+        <!-- Скрытое мобильное меню -->
+        <ul class="nav__list--mobile">
+            <li class="nav__item">
+                <a href="#characteristics" class="nav__link">Характеристики</a>
+            </li>
+            <li class="nav__item">
+                <a href="#video" class="nav__link">Видео</a>
+            </li>
+            <li class="nav__item">
+                <a href="#contact" class="nav__link">Контакты</a>
+            </li>
+            <li class="nav__item">
+                <a href="#contact" class="nav__link">Приобрести</a>
+            </li>
+        </ul>
+    </nav>
+
+    <header class="header">
+        <div class="container">
+            <div class="header__desc">
+                <h1 class="header__title">В ПРОДАЖЕ ДРОНЫ <span class="header__span1">СЕЛЬСКОХОЗЯЙСТВЕННОГО</span>
+                    НАЗНАЧЕНИЯ <span class="header__span2">АРМЕЙСКОГО </span> КАЧЕСТВА</h1>
+                <a href="#contact" class="header__btn">ПРИОБРЕСТИ</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="profile">
+            <div class="container">
+                <div class="profile__cards">
+                    <div class="profile__card">
+                        <img src="./image/profile-1.webp" alt="" class="profile__card-image">
+                        <h3 class="profile__title">ДЛЯ КОНТРОЛЯ <br> <span class="profile__span1">БЕЗОПАСНОСТИ</span>
+                            НАСАЖДЕНИЙ</h3>
+                    </div>
+                    <div class="profile__card">
+                        <img src="./image/profile-2.jpg" alt="" class="profile__card-image">
+                        <h3 class="profile__title">ДЛЯ <span class="profile__span2">ГЕОЛОГИЧЕСКИХ</span> <br>
+                            ИССЛЕДОВАНИЙ</h3>
+                    </div>
+                    <div class="profile__card">
+                        <img src="./image/profile-3.webp" alt="" class="profile__card-image">
+                        <h3 class="profile__title">ДЛЯ НАБЛЮДЕНИЯ <br> ЗА <span class="profile__span3">ПОЖАРАМИ</span>
+                        </h3>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="characteristics" class="characteristics">
+            <div class="container">
+                <div class="drone-block">
+                    <div class="drone-content">
+                        <h2 class="title">Уникальные характеристики</h2>
+                        <ul class="features">
+                            <li><strong>Скорость:</strong> 150 км/ч</li>
+                            <li><strong>Дальность:</strong> 1000 км</li>
+                            <li><strong>Грузоподъемность:</strong> 25–40 кг</li>
+                        </ul>
+                        <button class="cta-button">Узнать больше</button>
+                    </div>
+                    <div class="drone-image">
+                        <img src="/image/charactiristika.jpg" alt="Drone Image" />
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="video" class="video">
+            <div class="film-effect"></div>
+            <div class="container">
+                <div class="video__button">
+                    <i class='bx bx-play'></i>
+                    <a href="video.html" class="video__btn">Смотреть</a>
+                </div>
+            </div>
+        </section>
+        <section id="presentation" class="presentation">
+            <div class="container">
+                <h3 class="presentation__title">ПРИГЛАШАЕМ <br> <span class="presentation__span1">НА ПРЕЗЕНТАЦИЮ И
+                        ОБУЧЕНИЕ!</span></h3>
+                <p class="presentation__txt">Рассмотрите глубокое выгодное сотрудничество</p>
+                <a href="#contact" class="presentation__btn">Связаться с нами</a>
+            </div>
+        </section>
+        <section id="contact" class="contact">
+            <div class="container">
+                <div class="background">
+                    <div class="contact-block">
+                        <h2>Наши контакты</h2>
+                        <p class="telegram-handle">@drones</p>
+                        <div class="buttons">
+                            <a href="https://t.me/drones" class="btn telegram">Написать в Telegram</a>
+                            <a href="mailto:example@example.com" class="btn email">Написать на почту</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <a href="" class="footer__logo">DRONES</a>
+            <ul class="footer__list">
+                <li class="footer__item">
+                    <a href="#characteristics" class="footer__link">Характеристики</a>
+                </li>
+                <li class="footer__item">
+                    <a href="#video" class="footer__link">Видео</a>
+                </li>
+                <li class="footer__item">
+                    <a href="#contact" class="footer__link">Контакты</a>
+                </li>
+            </ul>
+            <a href="#contact" class="footer__btn">ПРИОБРЕСТИ</a>
+        </div>
+    </footer>
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>

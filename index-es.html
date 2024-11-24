@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Дроны</title>
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body>
+
+    <nav class="nav">
+        <div class="container">
+            <a href="" class="nav__logo">DRONES</a>
+            <ul class="nav__list">
+                <li class="nav__item">
+                    <a href="#characteristics" class="nav__link">Especificaciones</a>
+                </li>
+                <li class="nav__item">
+                    <a href="#video" class="nav__link">Vídeo</a>
+                </li>
+                <li class="nav__item">
+                    <a href="#contact" class="nav__link">Contactos</a>
+                </li>
+                <li class="nav__item">
+                    <a href="#contact" class="nav__link">Comprar</a>
+                </li>
+            </ul>
+            <div class="nav__helper">
+                <a href="#contact" class="nav__btn">COMPRAR</a>
+                <div class="language-switcher">
+                    <div class="dropdown">
+                        <button class="dropdown-toggle" id="dropdownButton">🇪🇸 Español <i
+                                class='bx bx-chevron-down'></i></button>
+                        <ul class="dropdown-menu" id="dropdownMenu">
+                            <li><a href="index-es.html">🇪🇸 Español</a></li>
+                            <li><a href="index-en.html">🇬🇧 English</a></li>
+                            <li><a href="index.html">🇷🇺 Русский</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- Бургер-меню для мобильных устройств -->
+            <div class="nav__burger" onclick="toggleMenu()">
+                <span class="burger-line"></span>
+                <span class="burger-line"></span>
+                <span class="burger-line"></span>
+            </div>
+        </div>
+
+        <!-- Скрытое мобильное меню -->
+        <ul class="nav__list--mobile">
+            <li class="nav__item">
+                <a href="#characteristics" class="nav__link">Especificaciones</a>
+            </li>
+            <li class="nav__item">
+                <a href="#video" class="nav__link">Vídeo</a>
+            </li>
+            <li class="nav__item">
+                <a href="#contact" class="nav__link">Contactos</a>
+            </li>
+            <li class="nav__item">
+                <a href="#contact" class="nav__link">Comprar</a>
+            </li>
+        </ul>
+    </nav>
+
+    <header class="header">
+        <div class="container">
+            <div class="header__desc">
+                <h1 class="header__title">EN VENTA DRONES <span class="header__span1">DE USO AGRÍCOLA</span>
+                    DE <span class="header__span2">CALIDAD MILITAR</span></h1>
+                <a href="#contact" class="header__btn">COMPRAR</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="profile">
+            <div class="container">
+                <div class="profile__cards">
+                    <div class="profile__card">
+                        <img src="./image/profile-1.webp" alt="" class="profile__card-image">
+                        <h3 class="profile__title">PARA EL MONITOREO <br> <span class="profile__span1">DE LA
+                                SEGURIDAD</span>
+                            DE LOS CULTIVOS</h3>
+                    </div>
+                    <div class="profile__card">
+                        <img src="./image/profile-2.jpg" alt="" class="profile__card-image">
+                        <h3 class="profile__title">PARA <span class="profile__span2">INVESTIGACIONES</span> <br>
+                            GEOLOGICAS</h3>
+                    </div>
+                    <div class="profile__card">
+                        <img src="./image/profile-3.webp" alt="" class="profile__card-image">
+                        <h3 class="profile__title">PARA EL MONITOREO <br> DE <span
+                                class="profile__span3">INCENDIOS</span>
+                        </h3>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="characteristics" class="characteristics">
+            <div class="container">
+                <div class="drone-block">
+                    <div class="drone-content">
+                        <h2 class="title">Características Únicas</h2>
+                        <ul class="features">
+                            <li><strong>Velocidad:</strong> 150 km/h</li>
+                            <li><strong>Alcance:</strong> 1000 km</li>
+                            <li><strong>Capacidad de carga:</strong> 25–40 kg</li>
+                        </ul>
+                        <button class="cta-button">Saber más</button>
+                    </div>
+                    <div class="drone-image">
+                        <img src="/image/charactiristika.jpg" alt="Drone Image" />
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="video" class="video">
+            <div class="film-effect"></div>
+            <div class="container">
+                <div class="video__button">
+                    <i class='bx bx-play'></i>
+                    <a href="video.html" class="video__btn">Ver</a>
+                </div>
+            </div>
+        </section>
+        <section id="presentation" class="presentation">
+            <div class="container">
+                <h3 class="presentation__title">¡TE INVITAMOS <br> <span class="presentation__span1">A LA PRESENTACIÓN Y
+                        FORMACIÓN!</span></h3>
+                <p class="presentation__txt">Considera una colaboración profunda y beneficiosa</p>
+                <a href="#contact" class="presentation__btn">Contacta con nosotros</a>
+            </div>
+        </section>
+        <section id="contact" class="contact">
+            <div class="container">
+                <div class="background">
+                    <div class="contact-block">
+                        <h2>Nuestros Contactos</h2>
+                        <p class="telegram-handle">@drones</p>
+                        <div class="buttons">
+                            <a href="https://t.me/drones" class="btn telegram">Escribir en Telegram</a>
+                            <a href="mailto:example@example.com" class="btn email">Escribir por correo electrónico</a>
+                        </div>                        
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <a href="" class="footer__logo">DRONES</a>
+            <ul class="footer__list">
+                <li class="footer__item">
+                    <a href="#characteristics" class="footer__link">Especificaciones</a>
+                </li>
+                <li class="footer__item">
+                    <a href="#video" class="footer__link">Vídeo</a>
+                </li>
+                <li class="footer__item">
+                    <a href="#contact" class="footer__link">Contactos</a>
+                </li>
+            </ul>
+            <a href="#contact" class="footer__btn">COMPRAR</a>            
+        </div>
+    </footer>
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>
